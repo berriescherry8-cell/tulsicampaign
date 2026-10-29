@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulsi Kids School, Balotra — Green Diwali Campaign 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="video-container">
+        <video id="intro-video" autoplay muted loop playsinline muted poster="">
+            <source src="https://rwrnxdnfobdssiethxue.supabase.co/storage/v1/object/public/hotel-media/A%20short%20cinematic%20Diwali%20campaign%20intro%20inspired%20by%20the%20supplied%20peaceful%20family%20celebration%20artwork.%20Show%20diverse%20schoolchildren,%20families,%20and%20community%20members%20joyfully%20lighting%20diyas,%20sharing%20warm%20smiles,%20helpi.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="video-overlay">
+            <div class="school-badge">
+                <img src="https://rwrnxdnfobdssiethxue.supabase.co/storage/v1/object/public/hotel-media/tulsi-logo.png" alt="Tulsi Kids School Logo" onerror="this.style.display='none'" style="width: 40px; height: 40px;">
+            </div>
+            <h1 class="video-title">Green Diwali Campaign 2026</h1>
+            <p class="video-subtitle">Celebrate with light, love, and clean air. Join our Green Diwali movement!</p>
+        </div>
+        
+        <button class="skip-btn" onclick="skipVideo()">Skip Intro</button>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <section id="form-section" style="padding: 40px 20px; max-width: 800px; margin: 0 auto;">
+        <div style="max-width: 600px; margin: 0 auto; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(212,175,55,0.3); backdrop-filter: blur(10px);">
+            <h2 style="font-family: 'Cinzel Decorative', cursive; color: #d4af37; text-align: center; margin-bottom: 30px;">Green Diwali Registration</h2>
+            
+            <form id="registration-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text);">I am a: <span style="color: #e74c3c;">*</span></label>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="radio" name="i_am" value="Student" required style="accent-color: #d4af37;"> Student
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="radio" name="i_am" value="Parents/Guardian"> Parents/Guardian
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="radio" name="i_am" value="Teacher/Staff"> Teacher/Staff
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="radio" name="i_am" value="Community Member"> Community Member
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="radio" name="i_am" value="Other"> Other:
+                        </label>
+                        <input type="text" name="other_specify" placeholder="Specify..." style="padding: 8px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: var(--text);">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text);">Class & Section (if student)</label>
+                    <input type="text" name="class_section" placeholder="Your answer" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: var(--text); font-family: inherit;">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text);">Full Name <span style="color: #e74c3c;">*</span></label>
+                    <input type="text" name="name" required placeholder="Enter your full name" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: var(--text); font-family: inherit;">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text);">City <span style="color: #e74c3c;">*</span></label>
+                    <input type="text" name="city" required placeholder="Enter your city" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: var(--text); font-family: inherit;">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 30px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text);">My Diwali Pledge <span style="color: #e74c3c;">*</span></label>
+                    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                        <input type="checkbox" name="pledge" required>
+                        I pledge to celebrate a clean, green, and safe Diwali by lighting diyas and sharing joy instead of bursting firecrackers.
+                    </label>
+                </div>
+
+                <button type="submit" style="width: 100%; padding: 15px; background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%); color: #fff; border: none; border-radius: 50px; font-family: 'Cinzel Decorative', cursive; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer;">
+                    Submit & Get Certificate
+                </button>
+            </form>
+
+            <div id="certificate-section" style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; border: 1px solid rgba(212,175,55,0.3); display: none;">
+                <h3 style="color: #d4af37; text-align: center; margin-bottom: 20px;">Your Certificate</h3>
+    <script>
+        const video = document.getElementById('intro-video');
+        const progressBar = document.getElementById('progress-bar');
+        let videoDuration = 0;
+        let currentUserData = null;
+
+        const SUPABASE_URL = 'https://rwrnxdnfobdssiethxue.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNNi43OgudwFnBU__WwqA6u1PXv0';
+
+        let supabase = null;
+
+        function initSupabase() {
+            try {
+                supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                return supabase;
+            } catch (e) {
+                console.error('Supabase init error:', e);
+                return null;
+            }
+        }
+
+        async function saveEntryToSupabase(formData) {
+            const sb = initSupabase();
+            if (!sb) {
+                currentUserData = { id: Date.now(), ...formData };
+                return currentUserData;
+            }
+            try {
+                const { data, error } = await sb
+                    .from('entries')
+                    .insert([{
+                        name: formData.name,
+                        city: formData.city,
+                        class_section: formData.class_section || '',
+                        i_am: formData.i_am || '',
+                        certificate_generated: false,
+                        created_at: new Date().toISOString()
+                    }])
+                    .select();
+                if (error) throw error;
+                currentUserData = data[0];
+                return data[0];
+            } catch (err) {
+                console.error('Supabase error:', err);
+                currentUserData = { id: Date.now(), ...formData };
+                return currentUserData;
+            }
+        }
+
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = {
+                i_am: formData.get('i_am') || '',
+                class_section: formData.get('class_section') || '',
+                name: formData.get('name') || '',
+                city: formData.get('city') || '',
+                pledge: formData.get('pledge') || ''
+            };
+            if (!data.name || !data.city) {
+                alert('Please fill in Name and City');
+                return;
+            }
+            await saveEntryToSupabase(data);
+            document.getElementById('certificate-section').style.display = 'block';
+            document.getElementById('cert-info').innerHTML = '<strong>Name:</strong> ' + data.name + '<br><strong>City:</strong> ' + data.city;
+            document.getElementById('certificate-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateCertificate() {
+            if (!currentUserData) { alert('Please submit the form first'); return; }
+            sessionStorage.setItem('certName', currentUserData.name || '');
+            sessionStorage.setItem('certCity', currentUserData.city || '');
+            window.open('certificate.html', '_blank');
+        }
+
+        video.addEventListener('loadedmetadata', () => { videoDuration = video.duration; });
+        video.addEventListener('timeupdate', () => {
+            if (videoDuration > 0) {
+                const progress = (video.currentTime / videoDuration) * 100;
+                progressBar.style.width = progress + '%';
+            }
+        });
+        video.addEventListener('play', () => {
+            setTimeout(() => {
+                document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+            }, 4000);
+        });
+        function skipVideo() {
+            video.pause();
+            document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            video.play().catch(() => console.log('Auto-play blocked'));
+        });
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) video.pause(); else video.play();
+        });
+    </script>
+</body>
+</html>
+                <p id="cert-info" style="text-align: center; margin-bottom: 20px;"></p>
+                <button onclick="generateCertificate()" style="width: 100%; padding: 15px; background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); color: #000; border: none; border-radius: 50px; font-family: 'Cinzel Decorative', cursive; font-size: 1.1rem; font-weight: 700; cursor: pointer;">
+                    📜 Generate Certificate
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    </script>
+</body>
+</html>

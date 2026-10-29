@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Commendation - Tulsi Kids School</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f4f4f5;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Certificate Canvas Container (A4 Landscape aspect ratio) */
+        .certificate-container {
+            position: relative;
+            width: 1000px;
+            height: 707px;
+            background: #fffdf9;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* Background Design Template Asset */
+        .certificate-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            object-fit: cover;
+        }
+
+        /* Text Overlay Layer */
+        .certificate-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* Dynamic Student Name Field */
+        .field-name {
+            position: absolute;
+            top: 47.4%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #0b3b24;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        /* Dynamic City Name Field */
+        .field-city {
+            position: absolute;
+            top: 57.2%;
+            left: 24.5%;
+            transform: translateX(-50%);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #0b3b24;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        /* Action Buttons Area */
+        .actions-bar {
+            margin-top: 25px;
+            display: flex;
+            gap: 16px;
+            z-index: 10;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-download {
+            background-color: #0b3b24;
+            color: #ffffff;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CERTIFICATE CANVAS -->
+    <div class="certificate-container" id="certificate-canvas">
+        <!-- Clean Template Image Asset (Replace URL below with your clean uploaded Supabase URL) -->
+        <img src="https://lqymwrhfirszrakuevqm.supabase.co/storage/v1/object/public/moolgyan-media/Gemini_Generated_Image_pyegdypyegdypyeg.png"
+            alt="Certificate Background" class="certificate-bg" />
+
+        <!-- DYNAMIC OVERLAY FIELDS -->
+        <div class="certificate-overlay">
+            <!-- Dynamic Student Name -->
+            <div class="field-name" id="studentName">ROHIT KUMAR</div>
+
+            <!-- Dynamic City Name -->
+            <div class="field-city" id="cityName">BALOTRA</div>
+        </div>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="actions-bar">
+        <button class="btn btn-download" onclick="downloadCertificate()">
+            📄 DOWNLOAD CERTIFICATE
+        </button>
+        <button class="btn btn-whatsapp" onclick="shareOnWhatsApp()">
+            💬 SHARE ON WHATSAPP
+        </button>
+    </div>
+
+    <script>
+        // Populate dynamic fields from URL query params (?name=&city=) or sessionStorage fallback
+        (function loadCertificateData() {
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name') || sessionStorage.getItem('certName') || 'ROHIT KUMAR';
+            const city = params.get('city') || sessionStorage.getItem('certCity') || 'BALOTRA';
+            document.getElementById('studentName').textContent = name.toUpperCase();
+            document.getElementById('cityName').textContent = city.toUpperCase();
+        })();
+
+        function downloadCertificate() {
+            alert('Download triggered');
+        }
+
+        function shareOnWhatsApp() {
+            alert('WhatsApp share triggered');
+        }
+    </script>
+
+</body>
+
+</html>

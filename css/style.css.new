@@ -1,0 +1,18 @@
+/*! Green Diwali Campaign 2026 - Premium Glass Morphism Design */
+/* CSS Variables - Color Palette */
+:root {
+    --bg: #0d0d0d;
+    --bg-secondary: #1a1a2e;
+    --primary-gradient: linear-gradient(135deg, #16213e 0%, #0f0f23 100%);
+    --emerald: #2ecc71;
+    --emerald-glow: rgba(46, 204, 113, 0.4);
+    --gold: #f1c40f;
+    --gold-glow: rgba(241, 196, 15, 0.3);
+    --silver: #ecf0f1;
+    --text-primary: #ecf0f1;
+    --text-secondary: #bdc3c7;
+    --text-muted: #7f8c8d;
+    --border: rgba(255, 255, 255, 0.1);
+    --glass-backdrop: rgba(17, 17, 23, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
+}

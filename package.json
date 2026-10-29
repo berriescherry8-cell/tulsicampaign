@@ -1,0 +1,11 @@
+{
+  "name": "tulsi-kids-green-diwali",
+  "version": "2.0.0",
+  "description": "Tulsi Kids School, Balotra - Green Diwali Campaign 2026 with Video Intro, Certificate Generation & Admin Panel",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": ["diwali", "green-diwali", "tulsi-kids-school", "balotra", "certificate"],
+  "license": "MIT"
+}
